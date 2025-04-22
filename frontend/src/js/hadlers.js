@@ -24,6 +24,21 @@ export const addStudents = async () => {
         });
         notification.showPopap();
         //Обновляем таблицу
+        resetForm();
         loadJSON();
     });
 };
+
+/**
+ * Функция для очистки формы
+ */
+function resetForm() {
+    const form = SELECTORS?.form;
+    for (let [key, value] of Object.entries(form)) {
+        if (value.name) {
+            document.getElementById(`${value.name}`).value = "";
+        }
+    }
+}
+
+
