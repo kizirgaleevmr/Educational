@@ -302,3 +302,22 @@ form {
     font-weight: bold;
     font-size: 16px;
 }
+/* Всплывающий окно добавление студента*/
+.popapAddStudent {
+    position: absolute;
+    right: 90px;
+    bottom: 60px;
+    padding: 5px 30px;
+    background-color: #e5e5e5;
+    border-left: 5px solid #970e3d;
+    opacity: 0;
+    font-size: 20px;
+    color: rgb(7, 69, 81);
+    transition: all 0.5s ease-out;
+}
+.show {
+    opacity: 1;
+}
+.hidden {
+    opacity: 0;
+}
