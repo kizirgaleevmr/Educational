@@ -321,3 +321,13 @@ form {
 .hidden {
     opacity: 0;
 }
+/*стили для кнопки в таблицы*/
+table td button {
+    padding: 10px;
+    background-color: #970e3d;
+    color: white;
+    border: none;
+}
+td:last-child {
+    text-align: center;
+}

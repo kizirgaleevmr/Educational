@@ -2,6 +2,7 @@ import { SELECTORS } from "./SELECTORS";
 import FetchWrapper from "./api/fetchWrapper";
 import { ENV } from "./constants";
 import { loadJSON } from "./generateTemplate";
+import { Notification } from "./components/notification";
 
 export const addStudents = async () => {
     //Получема данные из формы
@@ -17,6 +18,11 @@ export const addStudents = async () => {
         //Добавляем студента в базу
         const resp = new FetchWrapper(ENV.apiUrl);
         resp.post(ENV.endpoint, students);
+        //показываем всплывающее окно
+        const notification = new Notification({
+            textNotification: "Данные пользвателя добавлены",
+        });
+        notification.showPopap();
         //Обновляем таблицу
         loadJSON();
     });
