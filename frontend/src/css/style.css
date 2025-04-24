@@ -308,11 +308,23 @@ form {
     right: 90px;
     bottom: 60px;
     padding: 5px 30px;
-    background-color: #e5e5e5;
-    border-left: 5px solid #970e3d;
+    background-color: #80fab5;
+    border-left: 5px solid #018c3b;
     opacity: 0;
     font-size: 20px;
-    color: rgb(7, 69, 81);
+    color: rgb(2, 58, 69);
+    transition: all 0.5s ease-out;
+}
+.delet {
+    position: absolute;
+    right: 90px;
+    bottom: 60px;
+    padding: 5px 30px;
+    background-color: #f99797;
+    border-left: 5px solid #8c0101;
+    opacity: 0;
+    font-size: 20px;
+    color: rgb(2, 58, 69);
     transition: all 0.5s ease-out;
 }
 .show {
@@ -330,4 +342,9 @@ table td button {
 }
 td:last-child {
     text-align: center;
+}
+
+/*стиль для label modal*/
+.modal label {
+    display: block;
 }

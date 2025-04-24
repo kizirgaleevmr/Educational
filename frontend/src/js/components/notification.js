@@ -2,9 +2,10 @@ export class Notification {
     constructor(obj) {
         this.text = obj.textNotification;
     }
-    showPopap() {
+    showPopap(text) {
         const div = document.createElement("div");
-        div.classList.add("popapAddStudent");
+        div.classList.add(text);
+
         div.innerHTML = `<p>${this.text}</p>`;
         document
             .querySelector(".container")
@@ -13,18 +14,18 @@ export class Notification {
             div.classList.add("show");
         }, 1000);
         setTimeout(() => {
-            this.hiddenPopap();
+            this.hiddenPopap(text);
         }, 3000);
         setTimeout(() => {
-            this.remove();
+            this.remove(text);
         }, 4000);
     }
-    hiddenPopap() {
-        const el = document?.querySelector(".popapAddStudent");
+    hiddenPopap(text) {
+        const el = document?.querySelector(`.${text}`);
         el.classList.add("hidden");
     }
-    remove() {
-        const el = document?.querySelector(".popapAddStudent");
+    remove(text) {
+        const el = document?.querySelector(`.${text}`);
         el.remove();
     }
 }

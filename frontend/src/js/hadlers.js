@@ -17,12 +17,12 @@ export const addStudents = async () => {
 
         //Добавляем студента в базу
         const resp = new FetchWrapper(ENV.apiUrl);
-        resp.post(ENV.endpoint, students);
+        await resp.post(ENV.endpoint, students);
         //показываем всплывающее окно
         const notification = new Notification({
             textNotification: "Данные пользвателя добавлены",
         });
-        notification.showPopap();
+        notification.showPopap("popapAddStudent");
         //Обновляем таблицу
         resetForm();
         loadJSON();
@@ -40,5 +40,3 @@ function resetForm() {
         }
     }
 }
-
-
